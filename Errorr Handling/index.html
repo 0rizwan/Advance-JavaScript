@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+    <script>
+
+        // Error Handling with try and catch 
+        try {
+            console.log("Try started")
+            // blabcal;
+            console.log("Try ended")
+        }catch(error){
+            console.log("Error Aya");
+            console.log(error.name)
+            console.log(error.message)
+            console.log(error.stack)
+        }
+
+        try {
+            let json = '{"name":"Mukesh", "age": 31}';
+            let a = JSON.parse(json);
+            console.log(a.name);
+            console.log(a.age)
+            if (!a.name){
+                throw new Error("Bhenchod name gayab")
+            }
+            else if(!a.age){
+                throw new Error("Bc age gayab")
+            }
+        }catch(error){
+            console.log(error)
+        }finally{
+            // It always get runs whether there is error or not for eg- if theres no error then finally will run with try and if theres is a error it will run with the catch
+            console.log("Finally");
+        }
+
+    </script>
+</body>
+</html>

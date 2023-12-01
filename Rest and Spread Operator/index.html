@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest and Spread Operators</title>
+</head>
+<body>
+    <script>
+        // rest Operator- Its used in parameter like this with three dots(...args).
+        // spread operator - It can be used in while calling a function wit three dots.
+        function Sum(name, ...args){
+           let greet = (`Hello ${name}`);
+            var sum = 0;
+            for (var i in args){
+                sum += args[i];
+            }
+            return sum;
+        }
+        var arr = [10,20,30];
+        // console.log(Sum("raju", 50,100,...arr));
+        
+        // ES5 method to concat two Arrays
+        var arr1 = [1,2,3,4];
+        var arr2 = [5,6]
+        var arr3 = arr1.concat(arr2);
+        // console.log(arr3)
+
+        // ES6 method to concat two arrays- We can similarly merge objects like this
+        // Notice that here we can add more new elements in an array without even using pop() and push() method
+        var arr1 = [1,2,3,4];
+        var arr2 = [5,6];
+        var arr3 = [10, ...arr1, ...arr2, 20];
+        // console.log(arr3)
+        
+        // cloning the array 
+        var arr1 = [1,2,3,4];
+        var arr2 = arr1;
+        arr1.push(10)
+        // console.log(arr2)
+
+        var arr1 = [1,2,3,4];
+        var arr2 = [...arr1];
+        arr1.push(50)
+        // console.log(arr2)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Array and Object</title>
+</head>
+<body>
+    <script>
+        // Destructuring Array
+        // ES5 way of assigning the values to the variables from Array 
+        var player = ["Rodri", 25];
+        var name = player[0];
+        var age = player[1];
+        console.log(name);
+        console.log(age);
+
+        // ES6 way of assigning the values to the variables from Array its called Array Destructing
+        var student = ["Mick", "Btech"]
+        var [name, course] = student;
+        console.log("name- " + name);
+        console.log(course);
+
+        var arr = ["Mohan", 25, "Mumbai", "Football"];
+        var [name, age = 30, city, hobby] = arr;
+        // console.log("name- " + name);
+        // console.log("age- " + age);
+        // console.log("city- " + city);
+        // console.log("hobby- " + hobby);
+
+        // we can use rest opereator for printing the rest of the values which will return array of them  
+        var [name, ...otherDetails] = arr;
+        console.log("rest operator - " + otherDetails)
+        
+        // Destructing Array in a function 
+        function xyz([name, age, place]){
+            return [name, age, place];
+        }
+
+        var a = xyz(["Cristiano", 38, "Portugal"]);
+        console.log(a);
+
+        var a = ["Messi", 35, "Argentina"];
+        console.log(xyz(a));
+
+        // 
+        function user (){
+            return ["Bourne", 46, "Oxford"];
+        }
+        var [name, age, Uni] = user();
+        console.log("name- " + name);
+        console.log("age- " + age)
+         
+        // Destructuring Object - 
+        // while destructing the object, name of the variable should be same as the property name.
+
+        var user = {
+            name: "Mick",
+            age: 19, 
+            place: "Madrid"
+        }
+        // and if we want to change the variable name we can change it like this
+        var {name, place} = user;
+        var {name: n, place: p, age: a} = user;
+        console.log("alice name- " + a)
+        console.log("alice name- " + n);
+        console.log("alice name- " + p);
+        // console.log("name " + name);
+        // console.log(age);
+        // console.log(place);
+
+
+
+
+    </script>
+</body>
+</html>

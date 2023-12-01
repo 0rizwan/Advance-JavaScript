@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch 2</title>
+</head>
+<body>
+    <form action="" class="form">
+        name <input type="text" name="" id="name"><br><br>
+        age <input type="number" name="" id="age"><br><br>
+        city <input type="text" name="" id="city"><br><br>
+        <input type="submit" value="Submit" id="submit"><br>
+    </form>
+    <script>
+        document.getElementById('submit').addEventListener('click', (e)=>{
+            console.log("bsdk")
+            e.preventDefault();
+            var obj = {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+                city: document.getElementById('city').value
+            }
+
+            fetch("https://jsonplaceholder.typicode.com/users",{
+                method: "POST",
+                // body: JSON.stringify(obj),
+                body: new FormData(document.getElementById('form')), 
+                // headers: {
+                //     "Content-type": "application/json"
+                // }
+                headers: { 
+                    "Content-type": "application/x-www-form-urlencoded",
+                }
+            }).then((response) =>{
+                return response.json();
+            }).then((result)=>{
+                return  console.log(result);
+            })
+
+        })
+
+
+    </script>
+</body>
+</html>

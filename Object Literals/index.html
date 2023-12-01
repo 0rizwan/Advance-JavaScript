@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Literal</title>
+</head>
+<body>
+    <script>
+        // old ES5 way to assign the value of key
+        var name = "Giggs";
+        var course = "MBA";
+        var obj = {
+            name: name,
+            course: course
+        }
+        // console.log(obj);
+
+        // latest ES6 way 
+        var name = "Mendy";
+        var age = 23;
+        var obj = {
+            name,
+            age
+        }
+        // console.log(obj);
+        // here is how we can assign the value of the key with the created variable.
+        var n = "name";
+        var clg = "college"
+        var obj = {
+            ["student" + n]: "Jack",
+            [clg]: "Harvard",
+            name : function(){
+                return `${this.studentname} is the student of the ${this.college} Universities`
+            }
+
+        }
+        // console.log(obj.name());
+
+        // New function Sysntax- Now while making a function in a object its not necessary to write a word function
+
+        // if we want to add a space in a function name we have to use quotes 
+
+        var obj = {
+            name: "Raju",
+            age : 16,
+            "full detail"(){
+                return `${this.name} ${this.age}`
+            }
+        }
+        // its a new way of calling a function 
+        // console.log(obj["full detail"]())
+
+        // creating a function which returns a obj 
+        var name = "Paul";
+        var age = 19;
+        var team = "barca";
+        
+        function Details(name, age, team){
+        return {name, age, team}
+        }
+        
+        var op = Details(name, age, team);
+        console.log(op);
+    </script>
+</body>
+</html>

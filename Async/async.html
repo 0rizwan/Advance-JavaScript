@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <script>
+        let xyz = async () =>{
+            return "async function";
+        }
+        xyz().then((result) =>{
+            console.log(result)
+        })
+        console.log(xyz());
+        
+
+        // Using await method with async 
+        async function await(){
+            // console.log("2 : Message");
+            // const response = await fetch("../json.js");
+            // console.log("4 : Message")
+            // const student = await response.json();
+            // return student;
+
+            // We can also reduce the lines of code like this 
+            return (await (fetch("../json.js"))).json();
+        }
+        // console.log("1 : Message");
+        let a = await();
+        a.then((response) => {
+            console.log(response)
+        }).catch((error) =>{
+            console.log("Error aya bsdk")
+        })
+        // console.log("3 : Message")
+
+
+        // Using try catch method async function 
+        async function func(){
+            try{
+                let resp = await fetch("../json.js");
+                let method = await resp.json();
+                return method;
+            }catch(error){
+                console.log(error)
+            }
+        }
+        func().then((res)=>{
+            console.log(res);
+        });
+    </script>
+</body>
+</html>
