@@ -1,3 +1,18 @@
+// console.log("Start");
+
+// setTimeout(function () {
+//     console.log("Timer");
+// }, 2000);
+
+// let start = new Date().getTime();
+// let end = start;
+// while (end < start + 10000) {
+//     // console.log('Loop');
+//     end = new Date().getTime();
+// }
+
+// console.log("End");
+
 
 function outer() {
     let a = 10;
